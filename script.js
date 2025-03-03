@@ -7,5 +7,3 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
             behavior: 'smooth',
             block: 'start'
         });
-    });
-});
