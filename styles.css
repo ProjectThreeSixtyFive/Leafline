@@ -1,149 +1,124 @@
-/* Global Reset */
+/* Reset and basic styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and container */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Header styles */
+/* Header Styling */
 header {
-    background: #2e7d32;
+    background-color: #4CAF50;
     color: white;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 10px;
+    text-align: center;
 }
 
-h1 {
-    font-size: 3rem;
-    text-align: center;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+header h1 {
+    font-size: 2em;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
+    list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
-    list-style: none;
-    margin: 0 20px;
+    display: inline;
+    margin-right: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
     font-weight: bold;
-    position: relative;
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+/* Layout with two columns */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
-nav ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.left-column, .right-column {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-right: 10px;
 }
 
-/* Section styles */
-.section {
-    background: white;
-    margin: 20px 0;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.left-column h2, .right-column h2 {
+    color: #4CAF50;
+}
+
+/* Right column - Image and Code Section */
+.image-container {
     text-align: center;
-}
-
-h2 {
-    color: #2e7d32;
-    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-ul, ol {
-    text-align: left;
-    padding-left: 20px;
-    margin-top: 10px;
+.image-container img {
+    max-width: 100%;
+    height: auto;
 }
 
-ul li, ol li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-strong {
-    color: #2e7d32;
-}
-
-.whatsapp-button {
-    background-color: #25D366;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
+.code-section {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
     margin-top: 20px;
-    display: inline-block;
-    transition: background-color 0.3s;
 }
 
-.whatsapp-button:hover {
-    background-color: #128C7E;
+.code-section textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
 }
 
-/* Footer styles */
+/* Footer Styling */
 footer {
-    background-color: #2e7d32;
-    color: white;
-    padding: 15px 0;
     text-align: center;
-    font-size: 1rem;
+    margin-top: 40px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
 }
 
-/* Responsive styles */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+footer a:hover {
+    background-color: #575757;
+}
+
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-    nav ul {
+    .container {
         flex-direction: column;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    .left-column, .right-column {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
+}
 
-    .whatsapp-button {
-        width: 100%;
-        padding: 15px;
-    }
 }
