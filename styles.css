@@ -7,11 +7,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
     line-height: 1.6;
     padding: 20px;
-    overflow-x: hidden;
 }
 
 /* Header Styles */
@@ -20,12 +19,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #111;
+    background-color: #000;
 }
 
 header .logo h1 {
     color: #fff;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 nav ul {
@@ -55,9 +54,10 @@ main {
 
 .content-section {
     padding: 40px;
-    background-color: #222;
+    background-color: #f4f4f4;
     margin-bottom: 30px;
     border-radius: 10px;
+    border: 2px solid #000;
 }
 
 h2 {
@@ -69,7 +69,6 @@ h2 {
 p {
     margin-bottom: 20px;
     font-size: 1.1em;
-    color: #ddd;
 }
 
 ol {
@@ -80,6 +79,53 @@ ol {
 ol li {
     margin-bottom: 10px;
     font-size: 1.1em;
+}
+
+/* Registration Form Styles */
+.registration-section {
+    text-align: center;
+}
+
+.registration-section form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #333;
 }
 
 /* Contact Section */
@@ -106,7 +152,7 @@ ol li {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #111;
+    background-color: #000;
     margin-top: 40px;
 }
 
@@ -127,6 +173,10 @@ footer p {
     }
 
     .contact-button {
+        width: 100%;
+    }
+
+    .submit-button {
         width: 100%;
     }
 }
