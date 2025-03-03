@@ -11,6 +11,7 @@ body {
     color: #333;
     line-height: 1.6;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 /* Header Styling */
@@ -19,12 +20,15 @@ header {
     color: white;
     padding: 10px;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    animation: bounce 2s ease-in-out infinite;
 }
 
+/* Navigation Styling */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -41,7 +45,7 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Layout with two columns */
+/* Container Layout with Flexbox */
 .container {
     display: flex;
     justify-content: space-between;
@@ -63,6 +67,7 @@ nav ul li a {
 .image-container {
     text-align: center;
     margin-bottom: 20px;
+    animation: moveUp 3s ease-in-out infinite;
 }
 
 .image-container img {
@@ -70,6 +75,7 @@ nav ul li a {
     height: auto;
 }
 
+/* Code Section */
 .code-section {
     background-color: #f9f9f9;
     padding: 10px;
@@ -109,6 +115,24 @@ footer a:hover {
     background-color: #575757;
 }
 
+/* Hover effects for buttons and links */
+footer a:hover, nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Keyframes for animations */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes moveUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .container {
@@ -119,6 +143,4 @@ footer a:hover {
         margin-right: 0;
         margin-bottom: 20px;
     }
-}
-
 }
