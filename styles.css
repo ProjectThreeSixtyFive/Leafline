@@ -1,4 +1,4 @@
-/* Reset and basic styling */
+/* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,31 +7,29 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #000;
+    color: #fff;
     line-height: 1.6;
     padding: 20px;
     overflow-x: hidden;
 }
 
-/* Header Styling */
+/* Header Styles */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
 }
 
-header h1 {
-    font-size: 2.5em;
-    animation: bounce 2s ease-in-out infinite;
+header .logo h1 {
+    color: #fff;
+    font-size: 2em;
 }
 
-/* Navigation Styling */
 nav ul {
     list-style-type: none;
-    padding: 0;
 }
 
 nav ul li {
@@ -40,107 +38,95 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #4CAF50;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
-/* Container Layout with Flexbox */
-.container {
-    display: flex;
-    justify-content: space-between;
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* Main Content Section */
+main {
     margin-top: 30px;
 }
 
-.left-column, .right-column {
-    flex: 1;
-    padding: 20px;
-    background-color: #ffffff;
-    margin-right: 10px;
+.content-section {
+    padding: 40px;
+    background-color: #222;
+    margin-bottom: 30px;
+    border-radius: 10px;
 }
 
-.left-column h2, .right-column h2 {
+h2 {
     color: #4CAF50;
+    font-size: 2em;
+    margin-bottom: 15px;
 }
 
-/* Right column - Image and Code Section */
-.image-container {
-    text-align: center;
+p {
     margin-bottom: 20px;
-    animation: moveUp 3s ease-in-out infinite;
+    font-size: 1.1em;
+    color: #ddd;
 }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
+ol {
+    list-style-position: inside;
+    margin-left: 30px;
 }
 
-/* Code Section */
-.code-section {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ddd;
+ol li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
     margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-.code-section textarea {
-    width: 100%;
-    padding: 10px;
-    font-family: monospace;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical;
+.contact-button:hover {
+    background-color: #333;
 }
 
-/* Footer Styling */
+/* Footer Styles */
 footer {
     text-align: center;
+    padding: 10px;
+    background-color: #111;
     margin-top: 40px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
 }
 
-footer a {
+footer p {
     color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #333;
-    border-radius: 5px;
+    font-size: 0.9em;
 }
 
-footer a:hover {
-    background-color: #575757;
-}
-
-/* Hover effects for buttons and links */
-footer a:hover, nav ul li a:hover {
-    color: #4CAF50;
-}
-
-/* Keyframes for animations */
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes moveUp {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-
-/* Responsive Design for Smaller Screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+    .content-section {
+        padding: 20px;
     }
 
-    .left-column, .right-column {
-        margin-right: 0;
-        margin-bottom: 20px;
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .contact-button {
+        width: 100%;
     }
 }
