@@ -12,11 +12,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Cursor movement effects
+    document.body.addEventListener("mousemove", function(e) {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        document.body.style.backgroundPosition = `${x * 50}px ${y * 50}px`;
+    });
+
+    // Adding floating willow tree symbols
+    for (let i = 0; i < 10; i++) {
+        let willowLeaf = document.createElement("div");
+        willowLeaf.classList.add("willow-leaf");
+        willowLeaf.style.left = Math.random() * 100 + "vw";
+        willowLeaf.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        document.body.appendChild(willowLeaf);
+    }
+
     // WhatsApp Widget
     (function() {
         var options = {
             whatsapp: "+27696757651",
-            call_to_action: "Chat with us on WhatsApp!",
+            call_to_action: "Use our LeafLine - Chat with us on WhatsApp!",
             position: "right"
         };
         var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
