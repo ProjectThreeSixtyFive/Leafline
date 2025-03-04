@@ -1,43 +1,54 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("The Willow site loaded successfully.");
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll("nav ul li a").forEach(anchor => {
+    // Smooth scrolling effect
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            document.getElementById(targetId).scrollIntoView({
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
                 behavior: "smooth"
             });
         });
     });
 
-    // Cursor movement effects
-    document.body.addEventListener("mousemove", function(e) {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
-        document.body.style.backgroundPosition = `${x * 50}px ${y * 50}px`;
+    // Cursor effect
+    document.addEventListener("mousemove", function(e) {
+        let cursorEffect = document.createElement("div");
+        cursorEffect.classList.add("cursor-effect");
+        cursorEffect.style.left = `${e.clientX}px`;
+        cursorEffect.style.top = `${e.clientY}px`;
+        document.body.appendChild(cursorEffect);
+        setTimeout(() => cursorEffect.remove(), 500);
     });
 
-    // Adding floating willow tree symbols
-    for (let i = 0; i < 10; i++) {
-        let willowLeaf = document.createElement("div");
-        willowLeaf.classList.add("willow-leaf");
-        willowLeaf.style.left = Math.random() * 100 + "vw";
-        willowLeaf.style.animationDuration = (Math.random() * 5 + 5) + "s";
-        document.body.appendChild(willowLeaf);
-    }
+    // Text typing effect
+    const typeEffect = (element, text, speed) => {
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            }
+        }
+        typing();
+    };
 
-    // WhatsApp Widget
-    (function() {
-        var options = {
-            whatsapp: "+27696757651",
-            call_to_action: "Use our LeafLine - Chat with us on WhatsApp!",
-            position: "right"
-        };
-        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        document.getElementsByTagName('head')[0].appendChild(s);
-    })();
+    let headerText = document.querySelector("header h1");
+    headerText.innerHTML = "";
+    typeEffect(headerText, "Welcome to The Willow", 100);
+
+    // Button hover animation
+    document.querySelectorAll("button").forEach(button => {
+        button.addEventListener("mouseover", () => {
+            button.style.transform = "scale(1.1)";
+        });
+        button.addEventListener("mouseleave", () => {
+            button.style.transform = "scale(1)";
+        });
+    });
+
+    // WhatsApp widget functionality
+    let whatsappWidget = document.createElement("div");
+    whatsappWidget.classList.add("whatsapp-widget");
+    whatsappWidget.innerHTML = '<a href="https://wa.me/27696757651" target="_blank">Use Our LeafLine</a>';
+    document.body.appendChild(whatsappWidget);
 });
