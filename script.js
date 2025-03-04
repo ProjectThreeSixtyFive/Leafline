@@ -1,53 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("The Willow Leaf site loaded successfully.");
+    console.log("The Willow site loaded successfully.");
 
-    // WhatsApp button functionality
-    const whatsappBtn = document.createElement("a");
-    whatsappBtn.href = "https://wa.me/27696751651";
-    whatsappBtn.textContent = "Chat with Us on WhatsApp";
-    whatsappBtn.style.position = "fixed";
-    whatsappBtn.style.bottom = "20px";
-    whatsappBtn.style.right = "20px";
-    whatsappBtn.style.backgroundColor = "#25D366";
-    whatsappBtn.style.color = "white";
-    whatsappBtn.style.padding = "10px 20px";
-    whatsappBtn.style.borderRadius = "5px";
-    whatsappBtn.style.textDecoration = "none";
-    whatsappBtn.style.fontFamily = "Arial, sans-serif";
-    whatsappBtn.style.fontSize = "14px";
-    whatsappBtn.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
-    whatsappBtn.style.transition = "transform 0.3s ease";
-    
-    whatsappBtn.addEventListener("mouseover", function() {
-        whatsappBtn.style.transform = "scale(1.1)";
-    });
-    
-    whatsappBtn.addEventListener("mouseout", function() {
-        whatsappBtn.style.transform = "scale(1)";
-    });
-    
-    document.body.appendChild(whatsappBtn);
-
-    // Interactive Heading Animation
-    const heading = document.querySelector("#main-heading");
-    if (heading) {
-        heading.style.transition = "color 0.5s ease, transform 0.5s ease";
-        heading.addEventListener("mouseover", function() {
-            heading.style.color = "#25D366";
-            heading.style.transform = "scale(1.1)";
-        });
-        heading.addEventListener("mouseout", function() {
-            heading.style.color = "black";
-            heading.style.transform = "scale(1)";
-        });
-    }
-
-    // Keyword Highlighting for Focused Sections
-    const keywords = ["AI", "unemployment", "job development", "elder support", "CV assistance"];
-    document.querySelectorAll("p").forEach(paragraph => {
-        keywords.forEach(keyword => {
-            const regex = new RegExp(`(\\b${keyword}\\b)`, "gi");
-            paragraph.innerHTML = paragraph.innerHTML.replace(regex, "<span class='highlight'>$1</span>");
+    // Smooth scrolling for navigation links
+    document.querySelectorAll("nav ul li a").forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: "smooth"
+            });
         });
     });
+
+    // WhatsApp Widget
+    (function() {
+        var options = {
+            whatsapp: "+27696757651",
+            call_to_action: "Chat with us on WhatsApp!",
+            position: "right"
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
 });
