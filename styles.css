@@ -13,7 +13,6 @@ header {
 }
 
 nav ul {
-    list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -21,12 +20,19 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    list-style-type: none;
 }
 
 nav ul li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    color: green;
 }
 
 .whatsapp-widget {
@@ -41,15 +47,4 @@ nav ul li a {
 .whatsapp-widget a {
     color: white;
     text-decoration: none;
-}
-
-.cursor-effect {
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(45deg, green, yellow, black, blue, red);
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    transition: transform 0.1s ease-out;
 }
