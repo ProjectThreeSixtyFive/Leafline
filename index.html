@@ -3,93 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Willow Leaf – Empowering Lives, Restoring Hope">
-    <title>The Willow Leaf - Empowering the Elderly</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <title>The Willow - Empowering Seniors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
         <div class="logo">
-            <h1>The Willow Leaf</h1>
+            <h1 id="willow-heading">The Willow</h1>
+            <img src="https://www.pexels.com/photo/a-willow-tree-during-sunset-1761279/" alt="Willow Tree" class="willow-tree">
         </div>
         <nav>
             <ul>
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#steps">Steps</a></li>
-                <li><a href="#registration">Registration</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resources">Resources</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="intro">
-            <div class="column">
-                <h2>Welcome to The Willow Leaf</h2>
-                <p>
-                    The Willow Leaf is a non-profit organization dedicated to empowering elderly and disadvantaged individuals. We provide personalized CV writing services, job application guidance, and AI-driven tools to help bypass ATS systems. We offer a human touch to ensure every individual has a unique and tailored CV.
-                </p>
-                <p>
-                    Our mission is to bridge the gap by giving people access to job opportunities and helping them confidently apply. We understand that certain barriers exist, and we're here to support the elderly in overcoming them.
-                </p>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>The Willow is a non-profit organization dedicated to empowering elderly individuals (ages 45-65) to create professional CVs, apply for jobs, and find valuable resources to enhance their career opportunities.</p>
+            <img src="https://www.pexels.com/photo/elderly-woman-working-1583094/" alt="Elderly person working" class="section-img">
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Our resources include CV-building guides, job application tips, and links to various government programs aimed at reducing unemployment among older South Africans.</p>
+            <div class="resource-card">
+                <img src="https://www.pexels.com/photo/black-and-white-job-search-pen-and-paper-548759/" alt="Resource Image" class="resource-img">
+                <p><strong>Job Application Guide</strong> - Learn how to fill out job applications with ease.</p>
             </div>
-            <div class="column">
-                <img src="your-image.jpg" alt="The Willow Leaf" />
+            <div class="resource-card">
+                <img src="https://www.pexels.com/photo/black-and-white-job-search-pen-and-paper-548759/" alt="Resource Image" class="resource-img">
+                <p><strong>CV Builder</strong> - Create a professional CV in just a few steps!</p>
             </div>
         </section>
 
-        <section id="mission" class="content-section">
-            <h2>Our Mission</h2>
-            <p>
-                As an NGO, The Willow Leaf strives to provide services to the elderly and disadvantaged individuals. Our mission is to assist them with the modern job application process and equip them with the tools and support they need to secure employment. We aim to ensure that age or lack of resources does not limit someone’s potential.
-            </p>
-            <p>
-                We believe that every person deserves an opportunity to succeed. Through our tailored CV creation services, job application guidance, and using AI to bypass ATS systems, we provide opportunities where they otherwise might not exist.
-            </p>
-        </section>
-
-        <section id="steps" class="content-section">
-            <h2>Our Process</h2>
-            <p>Here is how we assist you:</p>
-            <ol>
-                <li>Initial consultation to gather essential details (age, experience, skills, and more).</li>
-                <li>Personalized CV creation based on your preferences, colors, and unique story.</li>
-                <li>Providing the first draft and collecting feedback for adjustments and improvements.</li>
-                <li>Finalizing the CV and guiding you through job applications, including digital or physical access points.</li>
-            </ol>
-        </section>
-
-        <section id="registration" class="content-section registration-section">
-            <h2>Register with Us</h2>
-            <p>Sign up to receive assistance with your CV and job applications.</p>
-            <form action="submit_form.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Contact Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
-        </section>
-
-        <section id="contact" class="content-section contact-section">
+        <section id="contact">
             <h2>Contact Us</h2>
-            <p>If you have any questions or need assistance, feel free to reach out:</p>
-            <a href="https://wa.me/your-phone-number" class="contact-button" target="_blank">Contact Us on WhatsApp</a>
+            <p>If you have any questions or need assistance, feel free to reach out to us on WhatsApp:</p>
+            <a href="https://wa.me/27696751651" id="whatsapp-link">Chat with us on WhatsApp</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 The Willow Leaf. All rights reserved. Registered as a Non-Profit Organization.</p>
+        <p>&copy; 2025 The Willow. All rights reserved.</p>
     </footer>
 
-    <script src="script.js" defer></script> <!-- Link to the JS file -->
 </body>
 </html>
