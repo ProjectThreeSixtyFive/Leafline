@@ -4,31 +4,41 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-    color: white;
+    color: black;
+    overflow-x: hidden;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    border-bottom: 5px solid black;
+    color: black;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #willow-heading {
-    font-size: 2rem;
-    color: white;
+    font-size: 3rem;
+    color: black;
+    text-align: center;
     margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#heading-description {
-    font-size: 1.1rem;
-    margin-top: 5px;
+.willow-tree {
+    width: 100px;
+    height: auto;
+    margin-top: -10px;
 }
 
 nav ul {
@@ -38,70 +48,81 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: black;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: #90EE90;
 }
 
+/* Main Content */
 main {
     margin-top: 80px;
-    padding: 20px;
+    padding: 40px;
+    line-height: 1.6;
 }
 
-h2, h3 {
+h2 {
     font-size: 2rem;
-    color: black;
+    margin-bottom: 20px;
 }
 
-.content {
+.section-img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.resource-card {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.text {
-    width: 60%;
-    color: black;
+.resource-card:hover {
+    transform: scale(1.05);
 }
 
-.image {
-    width: 35%;
-}
-
-.image img {
+.resource-img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
+#apply ol {
+    padding-left: 20px;
+}
+
+#apply li {
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #25D366;
+    font-weight: bold;
+}
+
+/* Footer */
 footer {
+    text-align: center;
     background-color: black;
     color: white;
     padding: 10px 0;
-    text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-#whatsapp-widget {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 999;
-}
-
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .text, .image {
-        width: 100%;
-    }
+#whatsapp-link {
+    color: #25D366;
+    font-weight: bold;
+    text-decoration: none;
 }
