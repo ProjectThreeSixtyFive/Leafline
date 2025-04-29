@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #f5f5f5;
-  color: #333;
+  background: #fff;
+  color: #000;
   line-height: 1.6;
 }
 
@@ -28,7 +28,7 @@ header h1 {
 header p {
   font-size: 1.1rem;
   margin-top: 8px;
-  color: #88c057; /* green accent */
+  color: #88c057; /* small green accent */
 }
 
 /* Container */
@@ -51,7 +51,6 @@ header p {
 
 .executive-summary h2,
 .government-links h2 {
-  color: #006400; /* deep green */
   margin-bottom: 15px;
   font-size: 1.6rem;
 }
@@ -67,9 +66,13 @@ header p {
 }
 
 .government-links a {
-  color: #0077ff;
+  color: #88c057; /* green accent for links */
   text-decoration: none;
   font-weight: 600;
+}
+
+.government-links a i {
+  margin-right: 8px;
 }
 
 .government-links a:hover {
