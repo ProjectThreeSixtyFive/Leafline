@@ -110,5 +110,126 @@
   </footer>
 
   <script src="script.js"></script>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafline - CV Assistance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* FAQ styles */
+        .faq-answer {
+            display: none;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* WhatsApp button */
+        #whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Leafline!</h1>
+        <p>Your trusted partner for CV Assistance</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We assist individuals with CV creation and job applications.</p>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-question">How can I get started?</div>
+        <div class="faq-answer">
+            <p>Start by contacting us, and we’ll guide you through creating a professional CV.</p>
+        </div>
+        <div class="faq-question">What do I need to provide?</div>
+        <div class="faq-answer">
+            <p>Simply provide your job history and relevant skills, and we’ll help build your CV.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to get in touch!</p>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <button id="whatsapp-btn">
+        <span>💬</span> <!-- WhatsApp icon -->
+    </button>
+
+    <script>
+        // === Smooth Scroll for Anchor Links ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // === WhatsApp Chat Button ===
+        document.addEventListener("DOMContentLoaded", () => {
+            const whatsappBtn = document.getElementById("whatsapp-btn");
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener("click", () => {
+                    const phoneNumber = "+27XXXXXXXXX"; // ← Replace with your actual number (with country code)
+                    const message = encodeURIComponent("Hi Leafline, I’d like help with my CV.");
+                    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+                });
+            }
+        });
+
+        // === FAQ or Info Card Toggle ===
+        document.querySelectorAll(".faq-question").forEach(question => {
+            question.addEventListener("click", () => {
+                const answer = question.nextElementSibling;
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                } else {
+                    answer.style.display = "block";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
 </body>
 </html>
