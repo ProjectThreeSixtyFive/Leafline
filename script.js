@@ -1,4 +1,3 @@
-<script>
 // === Smooth Scroll for Anchor Links ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const whatsappBtn = document.getElementById("whatsapp-btn");
   if (whatsappBtn) {
     whatsappBtn.addEventListener("click", () => {
-      const phoneNumber = "+27XXXXXXXXX"; // ← Replace with your actual number (with country code)
+      const phoneNumber = "27696751651";
       const message = encodeURIComponent("Hi Leafline, I’d like help with my CV.");
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
     });
@@ -33,4 +32,3 @@ document.querySelectorAll(".faq-question").forEach(question => {
     }
   });
 });
-</script>
